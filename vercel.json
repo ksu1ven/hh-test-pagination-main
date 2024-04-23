@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "web", "use": "@vercel/node" },
-    { "src": "srv", "use": "@vercel/node" }
+    { "src": "web/src", "use": "@vercel/next" },
+    { "src": "srv/src", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/users/(.*)", "dest": "srv/src/main.tsx" },
