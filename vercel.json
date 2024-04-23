@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "web", "use": "@vercel/node" },
+    { "src": "srv", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/users/(.*)", "dest": "srv/$1" },
+    { "src": "/(.*)", "dest": "web/$1" }
+  ]
+}

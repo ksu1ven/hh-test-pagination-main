@@ -18,7 +18,7 @@ const pg = new URL(process.env.APP_PG_URL);
       ssl: pg.searchParams.get('sslmode') !== 'disable',
       autoLoadEntities: true,
       // it is unsafe to use synchronize: true for schema synchronization on production
-      synchronize: false, // process.env.NODE_ENV === 'development',
+      synchronize: process.env.NODE_ENV === 'development',
       logging: process.env.NODE_ENV === 'development',
       useUTC: true,
     }),
