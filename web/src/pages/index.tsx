@@ -29,9 +29,7 @@ export const getServerSideProps = (async (ctx: GetServerSidePropsContext): Promi
   try {
     const { page, limit } = ctx.query;
     const res = await fetch(
-      `${
-        process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://hh-test-pagination-main.vercel.app"
-      }/users/${page ? `?page=${page}` : ""}${limit ? `${page ? "&" : "?"}limit=${limit}` : ""}`,
+      `http://localhost:3000/users/${page ? `?page=${page}` : ""}${limit ? `${page ? "&" : "?"}limit=${limit}` : ""}`,
       { method: "GET" }
     );
     if (!res.ok) {
